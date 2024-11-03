@@ -35,6 +35,6 @@ def send_excel_content(request):
         # Excel 데이터를 JSON 응답으로 반환
         logger.info('data')
         logger.info('data : ', data)
-        return JsonResponse({"data": data})
+        return JsonResponse(data, safe=False)
     else:
         return HttpResponse("File not found", status=404)
