@@ -22,12 +22,15 @@ def send_excel_content(request):
 
     # Excel 파일 경로 설정 (예: 프로젝트 루트 디렉토리의 'data.xlsx' 파일)
     global_vars = settings.GLOBAL_VARIABLE
-    file_path = os.path.join(os.path.dirname(__file__), global_vars["yes24ExcelPath"])
+    yes24_file_path = os.path.join(os.path.dirname(__file__), global_vars["yes24ExcelPath"])
+    kobo_file_path = os.path.join(os.path.dirname(__file__), global_vars["koboExcelPath"])
+    ypbooks_file_path = os.path.join(os.path.dirname(__file__), global_vars["ypbooksExcelPath"])
+    aladin_file_path = os.path.join(os.path.dirname(__file__), global_vars["aladinExcelPath"])
 
     # 파일이 존재하는지 확인
-    if os.path.exists(file_path):
+    if os.path.exists(yes24_file_path):
         # Excel 파일 열기
-        workbook = openpyxl.load_workbook(file_path)
+        workbook = openpyxl.load_workbook(yes24_file_path)
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
