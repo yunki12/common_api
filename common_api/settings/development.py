@@ -155,5 +155,5 @@ CORS_ALLOW_HEADERS = (
 )
 
 GLOBAL_VARIABLE.update({
-    "yes24ExcelPath": "/www/crawling/crawling/excel/yes24_result.xlsx"
+    "yes24ExcelPath": "C:\github\crawling\crawling\excel\yes24_result.xlsx"
 })
