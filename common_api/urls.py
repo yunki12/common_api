@@ -20,5 +20,5 @@ from .views import send_excel_content
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('books/', send_excel_content),
+    path('book/list', send_excel_content),
 ]

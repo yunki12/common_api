@@ -22,8 +22,8 @@ def send_excel_content(request):
 
     # Excel 파일 경로 설정 (예: 프로젝트 루트 디렉토리의 'data.xlsx' 파일)
     global_vars = settings.GLOBAL_VARIABLE
-    #file_path = os.path.join(os.path.dirname(__file__), 'C:\github\crawling\crawling\excel\yes24_result.xlsx')
-    file_path = os.path.join(os.path.dirname(__file__), global_vars["yes24ExcelPath"])
+    file_path = os.path.join(os.path.dirname(__file__), 'C:\github\crawling\crawling\excel\yes24_result.xlsx')
+    #file_path = os.path.join(os.path.dirname(__file__), global_vars["yes24ExcelPath"])
 
     # 파일이 존재하는지 확인
     if os.path.exists(file_path):
@@ -41,4 +41,4 @@ def send_excel_content(request):
         logger.info(data)
         return JsonResponse(data, safe=False)
     else:
-        return HttpResponse("File not found", status=404)
+        return HttpResponse("Crawling File not found", status=404)
