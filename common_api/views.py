@@ -41,6 +41,51 @@ def send_excel_content(request):
         # Excel 데이터를 JSON 응답으로 반환
         logger.info('data')
         logger.info(data)
+
+        workbook.close()
+
+        workbook = openpyxl.load_workbook(kobo_file_path)
+        sheet = workbook.active
+
+        # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
+        data = []
+        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
+            data.append(list(row))
+
+        # Excel 데이터를 JSON 응답으로 반환
+        logger.info('data')
+        logger.info(data)
+
+        workbook.close()
+
+        workbook = openpyxl.load_workbook(ypbooks_file_path)
+        sheet = workbook.active
+
+        # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
+        data = []
+        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
+            data.append(list(row))
+
+        # Excel 데이터를 JSON 응답으로 반환
+        logger.info('data')
+        logger.info(data)
+
+        workbook.close()
+
+        workbook = openpyxl.load_workbook(aladin_file_path)
+        sheet = workbook.active
+
+        # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
+        data = []
+        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
+            data.append(list(row))
+
+        # Excel 데이터를 JSON 응답으로 반환
+        logger.info('data')
+        logger.info(data)
+
+        workbook.close()
+
         return JsonResponse(data, safe=False)
     else:
         return HttpResponse("Crawling File not found", status=404)
