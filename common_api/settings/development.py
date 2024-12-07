@@ -155,8 +155,8 @@ CORS_ALLOW_HEADERS = (
 )
 
 GLOBAL_VARIABLE.update({
-    "yes24ExcelPath": "C:\github\crawling\crawling\excel\yes24_result.xlsx",
-    "koboExcelPath": "C:\github\crawling\crawling\excel\kyobo_result.xlsx",
-    "ypbooksExcelPath": "C:\github\crawling\crawling\ypbooks_result.xlsx",
-    "aladinExcelPath": "C:\github\crawling\crawling\aladin_result.xlsx"
+    "yes24ExcelPath": "C:\\github\\crawling\\crawling\\excel\\yes24_result.xlsx",
+    "koboExcelPath": "C:\\github\\crawling\\crawling\\excel\\kyobo_result.xlsx",
+    "ypbooksExcelPath": "C:\\github\\crawling\\crawling\\excel\\ypbooks_result.xlsx",
+    "aladinExcelPath": "C:\\github\\crawling\\crawling\\excel\\aladin_result.xlsx"
 })
