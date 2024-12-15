@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6sldr%!1hrxq%+8cu7((2$47uoibhixkb+!54*sq$#jt4!mx)&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -128,7 +128,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #CORS 관련 추가
-CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000','http://localhost:3000']#(포트 지정)
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://127.0.0.1:80', 'http://175.116.30.141:80']#(포트 지정)
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:80",
+    'http://175.116.30.141:80'
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
@@ -152,6 +161,10 @@ CORS_ALLOW_HEADERS = (
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+    'application/json',
+    'text/plain',
+    'text/html; charset=utf-8'
+    '*/*'
 )
 
 GLOBAL_VARIABLE.update({
@@ -160,4 +173,3 @@ GLOBAL_VARIABLE.update({
     "ypbooksExcelPath": "/www/python-project/crawling/excel/ypbooks_result.xlsx",
     "aladinExcelPath": "/www/python-project/crawling/excel/aladin_result.xlsx"
 })
-
