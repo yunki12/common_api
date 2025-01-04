@@ -34,44 +34,56 @@ def send_excel_content(request):
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        data = []
-        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
-            data.append(list(row))
+        json_object = {}
+        excelDataList = []
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+            excelDataList.append(list(row))
+
+        json_object['yes24_data'] = excelDataList
 
         workbook.close()
 
+        excelDataList = []
         workbook = openpyxl.load_workbook(kobo_file_path)
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
-            data.append(list(row))
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+            excelDataList.append(list(row))
+
+        json_object['kobo_data'] = excelDataList
 
         workbook.close()
 
+        excelDataList = []
         workbook = openpyxl.load_workbook(ypbooks_file_path)
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
-            data.append(list(row))
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+            excelDataList.append(list(row))
+
+        json_object['ybbooks_data'] = excelDataList
 
         # Excel 데이터를 JSON 응답으로 반환
         workbook.close()
 
+        excelDataList = []
         workbook = openpyxl.load_workbook(aladin_file_path)
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=10, min_col=1, max_col=4, values_only=True):
-            data.append(list(row))
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+            excelDataList.append(list(row))
+
+        json_object['aladin_data'] = excelDataList
 
         # Excel 데이터를 JSON 응답으로 반환
-        logger.info('data')
-        logger.info(data)
+        logger.info('json_object')
+        logger.info(json_object)
 
         workbook.close()
 
-        return JsonResponse(data, safe=False)
+        return JsonResponse(json_object, safe=False)
     else:
         return HttpResponse("Crawling File not found", status=404)
