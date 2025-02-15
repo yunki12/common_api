@@ -36,7 +36,7 @@ def send_excel_content(request):
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
         json_object = {}
         excelDataList = []
-        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=5, values_only=True):
             excelDataList.append(list(row))
 
         json_object['yes24_data'] = excelDataList
@@ -48,7 +48,7 @@ def send_excel_content(request):
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=5, values_only=True):
             excelDataList.append(list(row))
 
         json_object['kobo_data'] = excelDataList
@@ -60,7 +60,7 @@ def send_excel_content(request):
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=5, values_only=True):
             excelDataList.append(list(row))
 
         json_object['ybbooks_data'] = excelDataList
@@ -73,7 +73,7 @@ def send_excel_content(request):
         sheet = workbook.active
 
         # Excel 내용 읽기 (예: A1부터 C10까지의 데이터)
-        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=4, values_only=True):
+        for row in sheet.iter_rows(min_row=2, max_row=6, min_col=1, max_col=5, values_only=True):
             excelDataList.append(list(row))
 
         json_object['aladin_data'] = excelDataList
