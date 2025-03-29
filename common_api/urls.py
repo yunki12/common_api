@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import send_excel_content
+from .recommend import book_recommend
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/book/list', send_excel_content),
+    path('api/book/recommend', book_recommend)
 ]
