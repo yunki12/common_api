@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from .views import send_excel_content
 from .recommend import book_recommend
+from .imageCreate import ai_image_create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/book/list', send_excel_content),
-    path('api/book/recommend', book_recommend)
+    path('api/book/recommend', book_recommend),
+    path('api/ai/image/create', ai_image_create)
 ]
